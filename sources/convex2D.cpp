@@ -45,7 +45,6 @@ void convex2D::solveRegion(double *xPnts,double *yPnts,int numPnts)
       cur=cur->prev;
     }
   while(cur!=bdryOrig);
-  std::cout<<"First\n";
   bdry *temp=copy;
   do
     {
@@ -53,9 +52,7 @@ void convex2D::solveRegion(double *xPnts,double *yPnts,int numPnts)
       temp=temp->next;
     }
   while(temp!=copy);
-  std::cout<<"Second\n";
   findHead(&copy);
-  std::cout<<"Third\n";
   H<<copy->x<<" "<<copy->y<<std::endl;
   domain *dd;
   generate(&copy,domn);
@@ -176,7 +173,6 @@ void convex2D::generate(bdry **boun,convex2D::domain *dom)
       curprev=cur->prev;
       if(cur->next!=NULL && curprev->next==NULL)
 	{
-	  //cout<<"kuku "<<i<<" "<<cur->x<<" "<<cur->y<<endl;
 	  bList[i]=new bdry;
 	  temp=bList[i++];
 	  start=temp;
@@ -206,39 +202,18 @@ void convex2D::generate(bdry **boun,convex2D::domain *dom)
 	  temp->next=start;
 	  start->prev=prev;
 	  cur=curprev;
-	  //cout<<"kuku "<<i<<" "<<cur->x<<" "<<cur->y<<endl;
 	}
       else
 	{
-	  //cout<<"hiho "<<i<<" "<<cur->x<<" "<<cur->y<<endl;
 	  cur=cur->prev;
 	}
-      //cout<<"gola\n";
     }
   while(cur!=*boun);
 
-  // copy(bList[0],"first");
-  // copy(bList[1],"secon");
-  // copy(bList[2],"third");
-  // copy(bList[3],"fourt");
-  // copy(bList[4],"fifth");
-
-  //return 0;
-
-  //cout<<"level 3\n";
   for(i=0;i<count;i++)
     {
-      // temp=bList[i];
-      // do
-      // 	{
-      // 	  (temp->next)->prev=temp;
-      // 	  temp=temp->next;
-      // 	}
-      // while(temp!=bList[i]);
       generate(bList+i,dom->daughters+i);
-      //cout<<"vivivi "<<i<<"\n";
     }
-  //generate(bList);
   makeSegments(dom);
 }
 
@@ -280,8 +255,6 @@ void convex2D::makeSegments(convex2D::domain *dom)
   segChain *curSeg,*temp;
   double xp[2],yp[2];
   int count;
-
-  std::cout<<"Making\n";
 
   dom->xcen=dom->ycen=0.0;
   count=0;
