@@ -16,4 +16,19 @@ $ ./run 100
 $./run resetf
 # Removes case files written during a previous run
 
+In order to visualize points, there are two options. 
+
+1) If gnuplot is installed, use the following commands:
+
+$ gnuplot
+gnuplot> set xrange [-1.5:1.5]
+gnuplot> set yrange [-1.5:1.5]
+gnuplot> set size ratio 1.
+gnuplot> p 'domain_boundary' w l,'points_i','points_o'
+
+2) If python is installed, run the following command at the command line:
+
+$ python plo.py
+# numpy and matplotlib should also be installed for the plots, else an error will be thrown
+
 In case of an error/confusion please feel free to email anupambiswas85@gmail.com
