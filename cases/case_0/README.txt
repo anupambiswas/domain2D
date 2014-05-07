@@ -1,6 +1,6 @@
 Description:
 
-In this project, a polygon around the origin (0, 0) is studied. The number of sides is input at the command line. If nothing is input, a default polygon with 10 sides is chosen. The convex2D object 'dom' is provided the boundary points of the polygon. Then 5000 points are randomly generated, and 'dom' finds out if any randomly generated point inside the polygon or outside and accordingly stores its coordinates in the files 'points_i' and 'points_o' (i for inner, o for outer). 
+In this project, a polygon around the origin (0, 0) is studied. The number of sides is input at the command line. If nothing is input, a default polygon with 10 sides is chosen. The convex2D object 'dom' is provided the boundary points of the polygon. Then 5000 points are randomly generated, and 'dom' finds out if any randomly generated point is inside the polygon or outside and accordingly stores its coordinates in the files 'points_i' and 'points_o' (i for inner, o for outer). 
 
 Guidelines to build the project and run the code:
 
