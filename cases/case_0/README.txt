@@ -5,7 +5,7 @@ In this project, a polygon around the origin (0, 0) is studied. The number of si
 Guidelines to build the project and run the code:
 
 $ make
-# It makes the executanle file 'run'
+# It makes the executable file 'run'
 
 $ ./run
 # Studies polygon with 10 sides. If run again, studies a different decagon
